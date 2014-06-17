@@ -16,16 +16,84 @@
                     <h1>Paul</h1>
                 </section>
                 <section>
+                    <div>What is Gulp.js?</div>
+                    <div>
+                        <ul>
+                            <li>Jade and Sass Compilation</li>
+                            <li>Compressing Images</li>
+                            <li>Remove console and debugging statements</li>
+                            <b><li>Pre-minify Angular Apps</li></b>
+                            <li>Minify and Concatenate CSS and JS Files</li>
+                            <li>Run Automated Test</li>
+                        </ul>
+                    </div>
+                    <a href=http://www.gulpjs.com>gulpjs.com</a>
+                </section>
+                <section>
                     <h1>Gulp Uses Streams</h1>
                     <div>
                         Why does this matter?
                     </div>
+                    <br>
+                    <img class="fragment" src="images/node-stream-example.png"/>
+                    <img class="fragment" src="images/http-with-streams.png"/>
                 </section>
                 <section>
-                    <span class="fragment fade-in">
-                        <span class="fragment fade-out">I'll fade in, then out</span>
-                    </span>
+                    <h1>The Gulp API</h1>
+                    <ul>
+                        <li>src</li>
+                        <li>dest</li>
+                        <li>task</li>
+                        <li>watch</li>
+                    </ul>
                 </section>
+                <section>
+                    <h1>src</h1>
+                    <span>"Takes a glob and represents a file structure. Can be piped to plugins"</span>
+                    <br>
+                    <img src="images/gulp-src-example.png"/>
+                </section>
+                <section>
+                    <h1>dest</h1>
+                    <span>"Can be piped to and it will write files. Re-emits all data passed to it so you can pipe to multiple folders. Folders that don't exist will be created."</span>
+                    <br>
+                    <img src="images/gulp-dest-example.png"/>
+                </section>
+                <section>
+                    <h1>task</h1>
+                    <span>"Define a task using Orchestrator."</span>
+                    <br>
+                    <img src="images/gulp-task-example.png"/>
+                </section>
+                <section>
+                    <h1>task cont.</h1>
+                    <span>Q: What can you do in a task?</span>
+                    <br>
+                    <span>A: Anything you can do in a Node application.</span>
+                    <img class="fragment" src="images/gulp-task-promise.png"/>
+                </section>
+                <section>
+                    <h1>Asynchronous execution is a Strength and Weakness of Gulp</h1>
+                    <div>All tasks in Gulp execute Asynchronously</div>
+                    <div>As a task runner, there will be dependencies</div>
+                </section>
+                <section>
+                    <span>We can provide task with hints</span>
+                    <div>Hints come in 3 flavors</div>
+                    <ol>
+                        <li>Executing Callback</li>
+                        <li>Returning Promises</li>
+                        <li>Returning Streams</li>
+                    </ol>
+                    <a href=https://github.com/gulpjs/gulp/blob/master/docs/API.md#async-task-support>Sync Support</a>
+                </section>
+                <section>
+                    <h1>watch</h1>
+                    <span>"Watch files and do something when a file changes. This always returns an EventEmitter that emits change events."</span>
+                    <br>
+                    <img src="images/gulp-watch-example.png"/>
+                </section>
+
 
             </div>
         </div>
