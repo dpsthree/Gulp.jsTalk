@@ -1,0 +1,100 @@
+!!! 5
+html(lang='en')
+head
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='css/reveal.min.css')
+body
+    .reveal
+        .slides
+            section
+                h1 Gulp.js
+            section
+                h1 Paul
+            section
+                div What is Gulp.js?
+                div
+                    ul
+                        li Jade and Sass Compilation
+                        li Compressing Images
+                        li Remove console and debugging statements
+                        b
+                            li Pre-minify Angular Apps
+                        li Minify and Concatenate CSS and JS Files
+                        li Run Automated Test
+                    a(href='http://www.gulpjs.com') gulpjs.com
+            section
+                h1 Gulp Uses Streams
+                div
+                    | Why does this matter?
+                br
+                img.fragment(src='images/node-stream-example.png')
+                img.fragment(src='images/http-with-streams.png')
+            section
+                h1 The Gulp API
+                ul
+                    li src
+                    li dest
+                    li task
+                    li watch
+            section
+                h1 src
+                span "Takes a glob and represents a file structure. Can be piped to plugins"
+                br
+                img(src='images/gulp-src-example.png')
+            section
+                h1 dest
+                span
+                | "Can be piped to and it will write files. Re-emits all data passed to it so you can pipe to multiple folders. Folders that don't exist will be created."
+                br
+                img(src='images/gulp-dest-example.png')
+            section
+                h1 task
+                span "Define a task using Orchestrator."
+                br
+                img(src='images/gulp-task-example.png')
+            section
+                h1 task cont.
+                span Q: What can you do in a task?
+                br
+                span A: Anything you can do in a Node application.
+                img.fragment(src='images/gulp-task-promise.png')
+            section
+                h1 Asynchronous execution is a Strength and Weakness of Gulp
+                div All tasks in Gulp execute Asynchronously
+                div As a task runner, there will be dependencies
+            section
+                span We can provide task with hints
+                div Hints come in 3 flavors
+                ol
+                    li Executing Callback
+                    li Returning Promises
+                    li Returning Streams
+                a(href='https://github.com/gulpjs/gulp/blob/master/docs/API.md#async-task-support') Sync Support
+            section
+                h1 watch
+                span
+                | "Watch files and do something when a file changes. This always returns an EventEmitter that emits change events."
+                br
+                img(src='images/gulp-watch-example.png')
+            section
+                h1 Plugins
+                ul
+                    li gulp-jade
+                    li gulp-minify-css
+                    li gulp-minify-html
+                    li gulp-sass
+                    li gulp-ng-annotate
+                    li gulp-uglify
+                    li gulp-jshint
+            section
+                h1 Putting it All Together
+    script(src='JS/reveal.min.js')
+    script
+        Reveal.initialize({
+            controls: false,
+            progress: true,
+            history: false,
+            center: true,
+            theme: Reveal.getQueryHash().theme,
+            transition: 'linear',
+            });

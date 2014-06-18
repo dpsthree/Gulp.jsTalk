@@ -6,7 +6,7 @@ var gulp = require('gulp'),
     jshint = require('gulp-jshint');
 
 gulp.task('html', function() {
-    return gulp.src('www/**/*.jade')
+    return gulp.src('Jade/*.jade')
         .pipe(plumber())
         .pipe(watch())
         .pipe(jade())
