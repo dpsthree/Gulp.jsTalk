@@ -3,15 +3,18 @@ html(lang='en')
 head
     meta(charset='utf-8')
     link(rel='stylesheet', href='css/reveal.min.css')
+    link(rel='stylesheet', href='css/style.css')
+    link(rel='stylesheet', href='css/custom.css')
 body
-    .reveal
-        .slides
+    div.reveal
+        div.slides
             section
-                h1 Gulp.js
+                h1 gulp.js
             section
-                h1 Paul
+                h2 Paul Spears
+                div paul.spears@oasisdigital.com
             section
-                div What is Gulp.js?
+                h1 What is gulp.js?
                 div
                     ul
                         li Jade and Sass Compilation
@@ -21,9 +24,10 @@ body
                             li Pre-minify Angular Apps
                         li Minify and Concatenate CSS and JS Files
                         li Run Automated Test
+                    br
                     a(href='http://www.gulpjs.com') gulpjs.com
             section
-                h1 Gulp Uses Streams
+                h2 Gulp Uses Streams
                 div
                     | Why does this matter?
                 br
@@ -38,20 +42,20 @@ body
                     li watch
             section
                 h1 src
-                span "Takes a glob and represents a file structure. Can be piped to plugins"
-                br
                 img(src='images/gulp-src-example.png')
+                br
+                div "Takes a glob and represents a file structure. Can be piped to plugins"
             section
                 h1 dest
+                img(src='images/gulp-dest-example.png')
+                br
                 span
                 | "Can be piped to and it will write files. Re-emits all data passed to it so you can pipe to multiple folders. Folders that don't exist will be created."
-                br
-                img(src='images/gulp-dest-example.png')
             section
                 h1 task
-                span "Define a task using Orchestrator."
-                br
                 img(src='images/gulp-task-example.png')
+                br
+                span "Define a task using Orchestrator."
             section
                 h1 task cont.
                 span Q: What can you do in a task?
@@ -59,9 +63,9 @@ body
                 span A: Anything you can do in a Node application.
                 img.fragment(src='images/gulp-task-promise.png')
             section
-                h1 Asynchronous execution is a Strength and Weakness of Gulp
+                h2 Asynchronous execution is a Strength and Weakness of Gulp
                 div All tasks in Gulp execute Asynchronously
-                div As a task runner, there will be dependencies
+                div As a task runner there will be dependencies
             section
                 span We can provide task with hints
                 div Hints come in 3 flavors
@@ -69,13 +73,14 @@ body
                     li Executing Callback
                     li Returning Promises
                     li Returning Streams
+                br
                 a(href='https://github.com/gulpjs/gulp/blob/master/docs/API.md#async-task-support') Sync Support
             section
                 h1 watch
+                img(src='images/gulp-watch-example.png')
+                br
                 span
                 | "Watch files and do something when a file changes. This always returns an EventEmitter that emits change events."
-                br
-                img(src='images/gulp-watch-example.png')
             section
                 h1 Plugins
                 ul
@@ -86,8 +91,13 @@ body
                     li gulp-ng-annotate
                     li gulp-uglify
                     li gulp-jshint
+                div 605 Plugins as of June 2014
             section
                 h1 Putting it All Together
+            section
+                h1 Thanks!
+                br
+                a.credit(href="https://github.com/gulpjs/gulp/blob/master/docs/API.md") Examples and Descriptions courtesy of gulp.js
     script(src='JS/reveal.min.js')
     script.
         Reveal.initialize({
