@@ -29,6 +29,9 @@ function getFile(filePath,res,page404){
                     if(getExtension(filePath) === 'html'){
                         res.writeHead(200, {'Content-Type': 'text/html'});
                     }
+                    if(getExtension(filePath) === 'png'){
+                        res.writeHead(200, {'Content-Type': 'image/png'});
+                    }
                     res.end(contents);
                 } else {
                     //for our own troubleshooting
