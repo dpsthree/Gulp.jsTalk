@@ -1,4 +1,4 @@
-!!! 5
+doctype html
 html(lang='en')
 head
     meta(charset='utf-8')
@@ -89,7 +89,7 @@ body
             section
                 h1 Putting it All Together
     script(src='JS/reveal.min.js')
-    script
+    script.
         Reveal.initialize({
             controls: false,
             progress: true,
@@ -97,4 +97,4 @@ body
             center: true,
             theme: Reveal.getQueryHash().theme,
             transition: 'linear',
-            });
+        });

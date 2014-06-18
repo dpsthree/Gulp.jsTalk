@@ -2,8 +2,7 @@ var gulp = require('gulp'),
     jade = require('gulp-jade'),
     sass = require('gulp-sass'),
     plumber = require('gulp-plumber'),
-    watch = require('gulp-watch'),
-    jshint = require('gulp-jshint');
+    watch = require('gulp-watch');
 
 gulp.task('html', function() {
     return gulp.src('Jade/*.jade')
@@ -14,17 +13,23 @@ gulp.task('html', function() {
 });
 
 gulp.task('css', function() {
-    return gulp.src('www/css/**/*.scss')
+    return gulp.src('css/**/*.scss')
         .pipe(watch())
         .pipe(sass({errLogToConsole: true}))
         .pipe(gulp.dest('www/css'))
 });
 
 gulp.task('js', function() {
-    return gulp.src('www/js/**/*.js')
+    return gulp.src('JS/**/*.js')
         .pipe(watch())
-        .pipe(jshint('.jshintrc'))
-        .pipe(jshint.reporter('jshint-stylish'))
+        .pipe(gulp.dest('www/JS'))
 });
 
-gulp.task('dev', ['html', 'css', 'js'], function() {});
+gulp.task('images', function() {
+    return gulp.src('images/**/*.png')
+        .pipe(watch())
+        .pipe(gulp.dest('www/images'))
+})
+
+
+gulp.task('dev', ['html', 'css', 'js', 'images'], function() {});
