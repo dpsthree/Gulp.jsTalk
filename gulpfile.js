@@ -14,6 +14,7 @@ gulp.task('html', function() {
 
 gulp.task('css', function() {
     return gulp.src('css/**/*.scss')
+        .pipe(plumber())
         .pipe(watch())
         .pipe(sass({errLogToConsole: true}))
         .pipe(gulp.dest('www/css'))
@@ -32,4 +33,4 @@ gulp.task('images', function() {
 })
 
 
-gulp.task('dev', ['html', 'css', 'js', 'images'], function() {});
+gulp.task('default', ['html', 'css', 'js', 'images'], function() {});
